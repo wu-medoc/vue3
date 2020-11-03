@@ -4,18 +4,17 @@ body {
   font-family: tahoma;
   color: #282828;
 }
-.heardTit{
+.flexCenter{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .button {
-  margin: 30px;
+  margin: 30px 10px;
   background-color: #39495c;
   border-radius: 5px;
   font-size: 18px;
   width: 160px;
-  height: 60px;
   color: white;
   padding: 20px;
   box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
@@ -26,8 +25,8 @@ body {
 }
 
 .cart {
-  margin: 25px 100px;
-  float: right;
+  position: absolute;
+  right: 0;
   border: 1px solid #d8d8d8;
   padding: 10px 30px;
   background-color: white;
@@ -42,6 +41,14 @@ body {
   margin-top: 8px;
   border: 2px solid #d8d8d8;
   border-radius: 50%;
+}
+.color-circle small{
+  color: #fff;
+  line-height: 50px;
+}
+
+.activeClass{
+  border: 2px solid #000000;
 }
 
 .disabledButton {
@@ -61,7 +68,6 @@ h3 {
 .product-image img {
   border: 2px solid #d8d8d8;
   width: 70%;
-  margin: 40px;
   padding: 15px;
   -webkit-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
