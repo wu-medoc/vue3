@@ -17,8 +17,9 @@
           v-for="(variant, index) in variants" 
           :key="variant.id" 
           @mouseover="updateVariant(index)" 
-          class="color-circle" 
+          class="color-circle" :class="[isActive === variant.id ? 'activeClass': '']"
           :style="{ backgroundColor: variant.color }">
+          <small>{{ variant.color }}</small>
         </div>
         
         <button 
@@ -81,21 +82,24 @@ export default {
     }
   },
   computed: {
-      title() {
-          return this.brand + ' ' + this.product
-      },
-      image() {
-          return this.variants[this.selectedVariant].image
-      },
-      inStock() {
-          return this.variants[this.selectedVariant].quantity
-      },
-      shipping() {
-        if (this.premium) {
-          return 'Free'
-        }
-        return 2.99
+    title() {
+        return this.brand + ' ' + this.product
+    },
+    image() {
+        return this.variants[this.selectedVariant].image
+    },
+    inStock() {
+        return this.variants[this.selectedVariant].quantity
+    },
+    isActive() {
+      return this.variants[this.selectedVariant].id
+    },
+    shipping() {
+      if (this.premium) {
+        return 'Free'
       }
+      return 2.99
+    }
   }
 }
 </script>
