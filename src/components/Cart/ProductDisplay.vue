@@ -37,9 +37,9 @@
 </template>
 
 <script>
-import ProductDetails from './ProductDetails.vue'
-import ReviewForm from './ReviewForm.vue'
-import ReviewList from './ReviewList.vue'
+import ProductDetails from '@/components/Cart/ProductDetails.vue'
+import ReviewForm from '@/components/Cart/ReviewForm.vue'
+import ReviewList from '@/components/Cart/ReviewList.vue'
 export default {
   name: 'ProductDisplay',
   props: {
