@@ -1,6 +1,6 @@
 <template>
   <div class="flexCenter">  
-    <img alt="Vue logo" class="logo" src="../assets/logo.png"><a href="/"><h1>{{ msg }}</h1></a>
+    <img alt="Vue logo" class="logo" src="../../assets/logo.png"><a href="/"><h1>{{ msg }}</h1></a>
   </div>
   <div class="hello">
       <div class="nav-bar"></div>
@@ -113,5 +113,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="css">
-  @import "../assets/scss/styles.css";
+  @import "../../assets/scss/styles.css";
 </style>

@@ -1,40 +1,49 @@
 <template>
   <!-- <HelloWorld msg="Vue3 Demo"/> -->
   <div class="hello">
-      <div class="nav-bar"></div>
+      <div class="nav-bar flexCenter">Cart</div>
       <div class="cart">Cart({{ cart.length }})</div>
       <ProductDisplay :premium="premium"  @add-to-cart="updateCart" />
+  </div>
+  <div>
+      <div class="nav-bar flexCenter">LifeCycle</div>
+      <LifeCycle />
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import ProductDisplay from './components/ProductDisplay.vue'
-// import ReviewForm from '../components/ReviewForm.vue'
+// import HelloWorld from './components/Cart/HelloWorld.vue'
+import ProductDisplay from './components/Cart/ProductDisplay'
+import LifeCycle from './LifeCycle'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
-    ProductDisplay,    
-    // ReviewForm
+    ProductDisplay,
+    LifeCycle,
+  },
+  setup() {
+    return {
+    };
   },
   data() {
     return {
         cart: [],
-        premium: true
+        premium: true,
+        count: 1
     }
   },
   methods: {
     updateCart(id) {
-    this.cart.push(id)
+      this.cart.push(id)
     }
   }
 }
 </script>
 
 <style lang="scss">
-  @import "assets/scss/vars.scss";
+  @import "./assets/scss/vars.scss";
   a {
     color: $defColor;
   }

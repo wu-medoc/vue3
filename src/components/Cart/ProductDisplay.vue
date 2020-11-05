@@ -17,7 +17,7 @@
           v-for="(variant, index) in variants" 
           :key="variant.id" 
           @mouseover="updateVariant(index)" 
-          class="color-circle" :class="[isActive === variant.id ? 'activeClass': '']"
+          class="color-circle cellCenter" :class="[isActive === variant.id ? 'activeClass': '']"
           :style="{ backgroundColor: variant.color }">
           <small>{{ variant.color }}</small>
         </div>
@@ -37,9 +37,9 @@
 </template>
 
 <script>
-import ProductDetails from '../components/ProductDetails.vue'
-import ReviewForm from '../components/ReviewForm.vue'
-import ReviewList from '../components/ReviewList.vue'
+import ProductDetails from './ProductDetails.vue'
+import ReviewForm from './ReviewForm.vue'
+import ReviewList from './ReviewList.vue'
 export default {
   name: 'ProductDisplay',
   props: {
@@ -74,7 +74,7 @@ export default {
       this.selectedVariant = index
     },
     getSrc(name) { 
-      var images = require.context('../assets/images/', false, /\.jpg$/); 
+      var images = require.context('../../assets/images/', false, /\.jpg$/); 
       return images('./' + name) 
     },
     addReview(review) {
@@ -105,5 +105,5 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="css">
-  @import "../assets/scss/styles.css";
+  @import "../../assets/scss/styles.css";
 </style>
