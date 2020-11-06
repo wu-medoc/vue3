@@ -1,19 +1,24 @@
 <template>
   <!-- <HelloWorld msg="Vue3 Demo"/> -->
-  <div class="hello">
-      <div class="nav-bar flexCenter">Cart</div>
-      <div class="cart">Cart({{ cart.length }})</div>
-      <ProductDisplay :premium="premium"  @add-to-cart="updateCart" />
-  </div>
   <div>
       <div class="nav-bar flexCenter">LifeCycle</div>
       <LifeCycle />
+  </div>
+  <div>
+      <div class="nav-bar flexCenter">Template-Syntax</div>
+      <Interpolations />
+  </div>
+  <div>
+      <div class="nav-bar flexCenter">Cart Demo</div>
+      <div class="cart">Cart({{ cart.length }})</div>
+      <ProductDisplay :premium="premium"  @add-to-cart="updateCart" />
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/Cart/HelloWorld.vue'
 import ProductDisplay from './components/Cart/ProductDisplay'
+import Interpolations from './components/Syntax/Interpolations'
 import LifeCycle from './LifeCycle'
 
 export default {
@@ -22,6 +27,7 @@ export default {
     // HelloWorld,
     ProductDisplay,
     LifeCycle,
+    Interpolations,
   },
   setup() {
     return {
