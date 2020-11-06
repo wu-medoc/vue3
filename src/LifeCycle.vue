@@ -32,7 +32,7 @@
         {{ id }}
         {{ name }}
     </div>
-    
+    <img alt="lifeCycleSvg" class="svgImg" :src="require('@/assets/svg/lifeCycle-Hooks.svg')">
     <ul class="square">
       <strong>總結</strong>
       <li>在 Vue2.x 中通過補丁形式引入 Composition API ，進行 Vue2.x 和 Vue3.x 的回撥函式混用時： Vue2.x 的回撥函式會相對先執行 ，比如： mounted 優先於 onMounted 。</li>
@@ -88,3 +88,9 @@ export default {
   unmounted() { console.log('unmounted') }
 }
 </script>
+
+<style scoped>
+.svgImg{
+  width: 100vw;
+}
+</style>
