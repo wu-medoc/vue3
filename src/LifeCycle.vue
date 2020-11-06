@@ -1,6 +1,6 @@
 <template>
     <ul class="square">
-      除beforeCreate和created之外，我們可以在設置方法中訪問9個舊的生命週期掛鉤
+      <strong>除beforeCreate和created之外，我們可以在設置方法中訪問9個舊的生命週期掛鉤</strong>
       <li>onBeforeMount –在安裝開始之前調用</li>
       <li>onMounted –在安裝組件時調用</li>
       <li>onBeforeUpdate –在反應性數據更改時以及重新呈現之前調用</li>
@@ -12,7 +12,7 @@
       <li>onErrorCaptured –從子組件捕獲錯誤時調用</li>
     </ul>
     <ul class="square">
-      Vue2 to Vue3
+      <strong>Vue2 to Vue3</strong>
       <li>beforeCreate -> use setup()</li>
       <li>created -> use setup()</li>
       <li>beforeMount -> onBeforeMount</li>
@@ -24,98 +24,67 @@
       <li>errorCaptured -> onErrorCaptured</li>
     </ul>
     <div id="lifeHook">
-        <button @click="increment">
+        <!-- <button @click="increment">
           Count is: {{ state.count }}, double is: {{ state.double }}
         </button>
-        <div v-bind="increment">watchEffect CurrentWidth is {{ state.currentWidth }}</div>
+        <div v-bind="increment">watchEffect CurrentWidth is {{ state.currentWidth }}</div> -->
         <!-- <div v-html="CurrentWidth"></div> -->
+        {{ id }}
+        {{ name }}
     </div>
+    
+    <ul class="square">
+      <strong>總結</strong>
+      <li>在 Vue2.x 中通過補丁形式引入 Composition API ，進行 Vue2.x 和 Vue3.x 的回撥函式混用時： Vue2.x 的回撥函式會相對先執行 ，比如： mounted 優先於 onMounted 。</li>
+      <li>在 Vue3.x 中，爲了相容 Vue2.x 的語法，所有舊的生命週期函式得到保留（除了 beforeDestroy 和 destroyed ）。當生命週期混合使用時： Vue3.x 的生命週期相對優先於 Vue2.x 的執行 ，比如： onMounted 比 mounted 先執行。 </li>
+      <li>通過對比可以得出： 當你的主版本是哪個，當生命週期混用時，誰的回撥鉤子就會相對優先執行。</li>
+    </ul>
 </template>
 
 <script>
-import { onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, onActivated, onDeactivated, 
-onErrorCaptured, onRenderTracked, onRenderTriggered, reactive, computed, watchEffect } from 'vue'
+import { ref, watchEffect, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, 
+onRenderTracked, onRenderTriggered, onActivated, onDeactivated, onErrorCaptured } from 'vue';
 
 export default {
   name: 'LifeCycle',
   setup() {
-    var y = 0
-    const state = reactive({
-      count: 0,
-      double: computed(() => state.count * 2),
-      currentWidth: window.innerWidth
-    })
-    watchEffect(() => {
-      // ... 
-      console.log('watchEffect: '+ state.currentWidth++)
-    })
-
-    const resizeListener = () => {
-      setTimeout(() => {
-        console.log('resizeListener: '+ (y+=1))
-      }, 2000)
-    }
-    onRenderTracked(({ key, target, type }) => {
-      console.log('onRenderTracked: '+ (y+=1))
+    const id = ref(1) 
+    console.log('setup') 
+    watchEffect(() => { console.log('watchEffect') }) 
+    onBeforeMount(() => { console.log('onBeforeMount') }) 
+    onMounted(() => { console.log('onMounted') }) 
+    onBeforeUpdate(() => { console.log('onBeforeUpdate') }) 
+    onUpdated(() => { console.log('onUpdated') }) 
+    onBeforeUnmount(() => { console.log('onBeforeUnmount') }) 
+    onUnmounted(() => { console.log('onUnmounted') })  
+    onActivated(() => { console.log('onActivated') })  
+    onDeactivated(() => { console.log('onDeactivated') })  
+    onErrorCaptured(() => { console.log('onErrorCaptured') }) 
+    onRenderTracked(({ key, target, type }) => { 
+      console.log('onRenderTracked') 
       console.log({ key, target, type })
-    })    
-    onRenderTriggered((e) => {
-      // 檢查哪個依賴項導致組件重新呈現
-      console.log('onRenderTriggered: '+ (y+=1))
+    }) 
+    onRenderTriggered((e) => { 
+      console.log('onRenderTriggered') 
       console.log(Object.values(e))
-    })
-    onBeforeMount(() => {
-      // ... 
-      console.log('onBeforeMount: '+ (y+=1))
-    })
-    onMounted(() => {
-      // 已安裝 
-      window.addEventListener('resize', resizeListener); 
-      console.log('onMounted: '+ (y+=1))
-    })
-    onBeforeUpdate(() => {
-      // ... 
-      console.log('onBeforeUpdate: '+ (y+=1))
-    })
-    onUpdated(() => {
-      // 更新 
-      console.log('onUpdated: '+ (y+=1))
-    })
-    onBeforeUnmount(() => {
-      // beforeDestroy ->使用onBeforeUnmount
-      window.removeEventListener('resize', resizeListener);
-      console.log('onBeforeUnmount: '+ (y+=1))
-    })
-    onUnmounted(() => {
-      // 銷毀 destroyed ->使用onUnmounted
-      console.log('onUnmounted: '+ (y+=1))
-    })
-    onActivated(() => {
-      // ... 
-      console.log('onActivated: '+ (y+=1))
-    })
-    onDeactivated(() => {
-      // ... 
-      console.log('onDeactivated: '+ (y+=1))
-    })
-    onErrorCaptured(() => {
-      // errorCaptured ->使用onErrorCaptured 
-      console.log('onErrorCaptured: '+ (y+=1))
-    })
-
-    function increment() {
-      state.count++
-      state.currentWidth = window.innerWidth
-    }
-    return {
-      state,
-      increment
-    }
-  },
-  // methods: {
-  //   addClick() {
-  //     this.conunt +=1
-  //   }
-  // }
+    }) 
+    setTimeout(() => { id.value = 2; }, 2000) 
+    return { id } 
+  }, 
+  data() { 
+    console.log('data') 
+    return { name: 'LifeCycle' } 
+  }, 
+  beforeCreate() { console.log('beforeCreate') }, 
+  created() { console.log('created') }, 
+  beforeMount() { console.log('beforeMount') }, 
+  mounted() { 
+    console.log('mounted') 
+    setTimeout(() => { this.id = 3; }, 4000) 
+  }, 
+  beforeUpdate() { console.log('beforeUpdate') }, 
+  updated() { console.log('updated') }, 
+  beforeUnmount() { console.log('beforeUnmount') }, 
+  unmounted() { console.log('unmounted') }
 }
 </script>
