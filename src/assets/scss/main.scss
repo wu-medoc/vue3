@@ -1,0 +1,21 @@
+.demo {
+    border-radius: 2px;
+    padding: 20px 30px;
+    user-select: none;
+    overflow-x: auto;
+    p{
+        font-size: 1em;
+    }
+    h3{
+        color: #3eaf7c;
+    }
+}
+
+.codeText{
+    padding: 1em;
+    margin-bottom: 2em;
+    color: gray;
+    background: #E5FDE8;
+    overflow: auto;
+    font-size: small;
+}

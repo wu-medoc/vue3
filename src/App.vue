@@ -7,6 +7,12 @@
   <div>
       <div class="nav-bar flexCenter">Template-Syntax</div>
       <Interpolations />
+      <Directives />
+  </div>
+  <div>
+      <div class="nav-bar flexCenter">Data Properties and Methods</div>      
+      <DataProp />  
+      <ComputedProp />
   </div>
   <div>
       <div class="nav-bar flexCenter">Cart Demo</div>
@@ -19,6 +25,9 @@
 // import HelloWorld from './components/Cart/HelloWorld.vue'
 import ProductDisplay from './components/Cart/ProductDisplay'
 import Interpolations from './components/Syntax/Interpolations'
+import Directives from './components/Syntax/Directives'
+import DataProp from './components/DataMethods/DataProp'
+import ComputedProp from './components/DataMethods/ComputedProp'
 import LifeCycle from './LifeCycle'
 
 export default {
@@ -28,6 +37,9 @@ export default {
     ProductDisplay,
     LifeCycle,
     Interpolations,
+    Directives,
+    DataProp,
+    ComputedProp
   },
   setup() {
     return {
@@ -50,6 +62,7 @@ export default {
 
 <style lang="scss">
   @import "./assets/scss/vars.scss";
+  @import "./assets/scss/main.scss";
   a {
     color: $defColor;
   }
