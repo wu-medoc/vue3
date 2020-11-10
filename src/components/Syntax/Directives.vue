@@ -21,7 +21,7 @@
         <p>帶有動態參數的簡寫</p>
         <div v-text="codeVon3" class="codeText"></div>
 
-        <p>
+        <p class="text-fix">
             模板表達式是沙盒化的，只能訪問白名單中的全局變量，例如Math和Date。您不應嘗試在模板表達式中訪問用戶定義的全局變量。
         </p>
     </div>
@@ -33,7 +33,7 @@ export default {
         return {
             seen: true,
             msg: 'Directives',
-            codeVif: '☗<p v-if="seen">Now you see me</p> ☗<p v-if="!seen">You can\'t see me.</p>',
+            codeVif: '🔈<p v-if="seen">Now you see me</p> 🔈<p v-if="!seen">You can\'t see me.</p>',
             codeVbind1: '<a v-bind:href="url"> ... </a>',
             codeVbind2: '<a :href="url"> ... </a>',
             codeVbind3: '<a :[key]="url"> ... </a>',

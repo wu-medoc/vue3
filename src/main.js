@@ -5,4 +5,5 @@ import { VueSvgIconPlugin } from '@yzfe/vue3-svgicon'
 import '@yzfe/svgicon/lib/svgicon.css'
 
 const app = createApp(App)
-app.use(VueSvgIconPlugin, { tagName: 'svg' }).mount('#app')
+app.mount('#app')
+// app.use(VueSvgIconPlugin, { tagName: 'svg' }).mount('#app')

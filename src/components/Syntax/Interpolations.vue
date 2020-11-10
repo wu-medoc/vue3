@@ -31,10 +31,10 @@ export default {
             isButtonDisabled: true,
             msg: 'Interpolations',
             rawHtml: '<span style="color: red">This should be red.</span>',
-            codeVhtml: '☗<p>Using mustaches: {{ rawHtml }}</p> ☗<p>Using v-html directive: <span v-html="rawHtml"></span></p>',
+            codeVhtml: '🔈<p>Using mustaches: {{ rawHtml }}</p> 🔈<p>Using v-html directive: <span v-html="rawHtml"></span></p>',
             codeMsg: '<p>Message: {{ msg }}</p>',
             codeVone: '<p v-once>This will never change: {{ msg }}</p>',
-            codebind: '☗<div v-bind:id="\'list-\'+dynamicId">this Attributes id is {{dynamicId}}</div> ☗<button v-bind:disabled="isButtonDisabled">Button</button>',
+            codebind: '🔈<div v-bind:id="\'list-\'+dynamicId">this Attributes id is {{dynamicId}}</div> 🔈<button v-bind:disabled="isButtonDisabled">Button</button>',
             codeJs: 'dynamicId is {{ dynamicId }} , dynamicId+1 = {{ dynamicId + 1 }} , {{ dynamicId ? \'YES\' : \'NO\' }} '
         }
     }

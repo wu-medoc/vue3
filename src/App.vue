@@ -10,9 +10,21 @@
       <Directives />
   </div>
   <div>
-      <div class="nav-bar flexCenter">Data Properties and Methods</div>      
+      <div class="nav-bar flexCenter">Data / Methods / Computed / Watchers</div>      
       <DataProp />  
       <ComputedProp />
+  </div>
+  <div>
+      <div class="nav-bar flexCenter">Bindings</div>      
+      <HtmlClasses />  
+      <InlineStyles />
+  </div>
+  <div>
+      <div class="nav-bar flexCenter">Rendering</div>      
+      <ConditionalRendering />  
+      <ListRendering />
+      <FilterRendering />
+      <RenderingDemo />
   </div>
   <div>
       <div class="nav-bar flexCenter">Cart Demo</div>
@@ -28,6 +40,12 @@ import Interpolations from './components/Syntax/Interpolations'
 import Directives from './components/Syntax/Directives'
 import DataProp from './components/DataMethods/DataProp'
 import ComputedProp from './components/DataMethods/ComputedProp'
+import HtmlClasses from './components/Bindings/HtmlClasses'
+import InlineStyles from './components/Bindings/InlineStyles'
+import ConditionalRendering from './components/Rendering/ConditionalRendering'
+import ListRendering from './components/Rendering/ListRendering'
+import FilterRendering from './components/Rendering/FilterRendering'
+import RenderingDemo from './components/Rendering/RenderingDemo'
 import LifeCycle from './LifeCycle'
 
 export default {
@@ -39,7 +57,13 @@ export default {
     Interpolations,
     Directives,
     DataProp,
-    ComputedProp
+    ComputedProp,
+    HtmlClasses,
+    InlineStyles,
+    ConditionalRendering,
+    ListRendering,
+    FilterRendering,
+    RenderingDemo,
   },
   setup() {
     return {

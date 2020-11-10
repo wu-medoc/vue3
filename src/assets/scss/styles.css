@@ -186,7 +186,14 @@ ul.square {
   list-style-type: square;
   text-align: left;
 }
-
+ul.disc {
+  list-style-type: disc;
+  text-align: left;
+}
+.text-fix{
+  text-align: justify;
+  text-justify:inter-ideograph;
+}
 @media only screen and (max-width: 600px) {
   .container {
     flex-direction: column;
