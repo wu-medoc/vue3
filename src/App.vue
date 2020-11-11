@@ -18,12 +18,24 @@
       <div class="nav-bar flexCenter">Bindings</div>      
       <HtmlClasses />  
       <InlineStyles />
+      <FormInput />
   </div>
   <div>
-      <div class="nav-bar flexCenter">Rendering</div>      
-      <ConditionalRendering />  
-      <ListRendering />
-      <FilterRendering />
+      <div class="nav-bar flexCenter">Form Demo</div>    
+      <FormDemo />
+  </div>
+  <div>
+      <div class="nav-bar flexCenter">Components Basics</div>    
+  </div>
+  <div>
+      <div class="nav-bar flexCenter">Components In-Depth</div>    
+  </div>
+  <div>
+      <div class="nav-bar flexCenter">Events Handling</div>    
+      <ListeningEvents />
+  </div>
+  <div>
+      <div class="nav-bar flexCenter">Rendering Demo</div>    
       <RenderingDemo />
   </div>
   <div>
@@ -42,10 +54,13 @@ import DataProp from './components/DataMethods/DataProp'
 import ComputedProp from './components/DataMethods/ComputedProp'
 import HtmlClasses from './components/Bindings/HtmlClasses'
 import InlineStyles from './components/Bindings/InlineStyles'
+import FormInput from './components/Bindings/FormInput'
+import FormDemo from './components/Bindings/FormDemo'
 import ConditionalRendering from './components/Rendering/ConditionalRendering'
 import ListRendering from './components/Rendering/ListRendering'
 import FilterRendering from './components/Rendering/FilterRendering'
 import RenderingDemo from './components/Rendering/RenderingDemo'
+import ListeningEvents from './components/Events/ListeningEvents'
 import LifeCycle from './LifeCycle'
 
 export default {
@@ -60,10 +75,13 @@ export default {
     ComputedProp,
     HtmlClasses,
     InlineStyles,
+    FormInput,
+    FormDemo,
     ConditionalRendering,
     ListRendering,
     FilterRendering,
     RenderingDemo,
+    ListeningEvents,
   },
   setup() {
     return {
