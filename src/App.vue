@@ -25,7 +25,9 @@
       <FormDemo />
   </div>
   <div>
-      <div class="nav-bar flexCenter">Components Basics</div>    
+      <div class="nav-bar flexCenter">Components Basics</div> 
+      <Basic /> 
+      <Blog /> 
   </div>
   <div>
       <div class="nav-bar flexCenter">Components In-Depth</div>    
@@ -56,6 +58,8 @@ import HtmlClasses from './components/Bindings/HtmlClasses'
 import InlineStyles from './components/Bindings/InlineStyles'
 import FormInput from './components/Bindings/FormInput'
 import FormDemo from './components/Bindings/FormDemo'
+import Basic from './components/CompDemo/Basic'
+import Blog from './components/CompDemo/Blog'
 import ConditionalRendering from './components/Rendering/ConditionalRendering'
 import ListRendering from './components/Rendering/ListRendering'
 import FilterRendering from './components/Rendering/FilterRendering'
@@ -77,6 +81,8 @@ export default {
     InlineStyles,
     FormInput,
     FormDemo,
+    Basic,
+    Blog,
     ConditionalRendering,
     ListRendering,
     FilterRendering,
