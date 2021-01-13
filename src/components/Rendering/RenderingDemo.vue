@@ -40,38 +40,38 @@
 <script>
 import todoItem from './todoItem'
 export default {
-    name: 'RenderingDemo',
-    data() {
-        return {
-        newTodoText: '',
-        todos: [
-            {
-            id: 1,
-            title: 'Do the dishes'
-            },
-            {
-            id: 2,
-            title: 'Take out the trash'
-            },
-            {
-            id: 3,
-            title: 'Mow the lawn'
-            }
-        ],
-        nextTodoId: 4
+  name: 'RenderingDemo',
+  data () {
+    return {
+      newTodoText: '',
+      todos: [
+        {
+          id: 1,
+          title: 'Do the dishes'
+        },
+        {
+          id: 2,
+          title: 'Take out the trash'
+        },
+        {
+          id: 3,
+          title: 'Mow the lawn'
         }
-    },
-    components: {
-        todoItem
-    },
-    methods: {
-        addNewTodo() {
-        this.todos.push({
-            id: this.nextTodoId++,
-            title: this.newTodoText
-        })
-        this.newTodoText = ''
-        }
+      ],
+      nextTodoId: 4
     }
+  },
+  components: {
+    todoItem
+  },
+  methods: {
+    addNewTodo () {
+      this.todos.push({
+        id: this.nextTodoId++,
+        title: this.newTodoText
+      })
+      this.newTodoText = ''
+    }
+  }
 }
 </script>

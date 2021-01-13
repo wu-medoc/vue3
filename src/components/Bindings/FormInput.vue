@@ -31,18 +31,18 @@
             </li>
             <li>
                 <div class="gray">when checked: vm.toggle === 'yes'<br> when unchecked: vm.toggle === 'no'</div>
-                &lt;input type="checkbox" v-model="toggle" true-value="yes" false-value="no"&gt; 
-            </li> 
+                &lt;input type="checkbox" v-model="toggle" true-value="yes" false-value="no"&gt;
+            </li>
             <li>
                 <div class="gray">when checked: vm.pick === vm.a</div>
-                &lt;input type="radio" v-model="pick" v-bind:value="a"&gt; 
-            </li> 
+                &lt;input type="radio" v-model="pick" v-bind:value="a"&gt;
+            </li>
             <li>
                 <div class="gray">when checked:<br> typeof vm.selected // => 'object'<br>vm.selected.number // => 123</div>
                 &lt;select v-model="selected"&gt;<br />
                 &lt;option :value="{ number: 123 }"&gt;123&lt;/option&gt;
                 &lt;/select&gt;
-            </li> 
+            </li>
         </ul>
         <strong>＃修飾符</strong>
         <ul class="square">
@@ -64,12 +64,12 @@
 </template>
 <script>
 export default {
-    name: 'FormInput',
-    data() {
-        return {
-            codeV: '① ②',
-        }
+  name: 'FormInput',
+  data () {
+    return {
+      codeV: '① ②'
     }
+  }
 }
 </script>
 <style scoped>

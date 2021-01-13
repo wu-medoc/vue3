@@ -31,68 +31,69 @@
 </template>
 <script>
 export default {
-    name: 'ComputedProp',
-    data() {
-        return { 
-            author: {
-                name: 'John Doe',
-                books: [
-                'Vue 2 - Advanced Guide',
-                'Vue 3 - Basic Guide',
-                'Vue 4 - The Mystery'
-                ]
-            },
-            question: '',
-            answer: 'Questions usually contain a question mark. ☺)',     
-            firstName: 'Foo',
-            lastName: 'Bar',
-            // fullName: 'Foo Bar',
-            codeVhtml: '<span>{{ author.books.length > 0 ? \'Yes\' : \'No\' }}</span>',
-            codeVcomputed: '①computed【publishedBooksMessage() {return this.author.books.length > 0 ? \'Yes\' : \'No\'}】, ②html【<span>{{ publishedBooksMessage }}</span>】',
-            codeVmethods: '①methods【calculateBooksMessage() {return this.author.books.length > 0 ? \'Yes\' : \'No\'}】, ②html【<span>{{ calculateBooksMessage() }}</span>】'
-        }
-    },
-    watch: {
-      // whenever question changes, this function will run
-      question(newQuestion, oldQuestion) {
-        if (newQuestion.indexOf('?') > -1) {
-          this.getAnswer()
-        }
-      }
-    },
-    computed: {
-        publishedBooksMessage() {
-            return this.author.books.length > 0 ? 'Yes' : 'No'
-        },        
-        now() {
-            return Date.now()
-        },
-        fullName() {
-            return 'computed➜' + this.firstName + ' ' + this.lastName
-        }
-    },    
-    methods: {
-        calculateBooksMessage() {
-            return this.author.books.length > 0 ? 'Yes' : 'No'
-        },        
-        getAnswer() {
-            // 使用axios 在index.html需引入
-            this.answer = 'Thinking...'
-            axios
-            .get('https://yesno.wtf/api')
-            .then(response => {
-                this.answer = response.data.answer
-            })
-            .catch(error => {
-                this.answer = 'Error! Could not reach the API. ' + error
-            })
-        },        
-        // firstName(val) {
-        //     this.fullName = val + ' ' + this.lastName
-        // },
-        // lastName(val) {
-        //     this.fullName = this.firstName + ' ' + val
-        // }
+  name: 'ComputedProp',
+  data () {
+    return {
+      author: {
+        name: 'John Doe',
+        books: [
+          'Vue 2 - Advanced Guide',
+          'Vue 3 - Basic Guide',
+          'Vue 4 - The Mystery'
+        ]
+      },
+      question: '',
+      answer: 'Questions usually contain a question mark. ☺)',
+      firstName: 'Foo',
+      lastName: 'Bar',
+      // fullName: 'Foo Bar',
+      codeVhtml: '<span>{{ author.books.length > 0 ? \'Yes\' : \'No\' }}</span>',
+      codeVcomputed: '①computed【publishedBooksMessage() {return this.author.books.length > 0 ? \'Yes\' : \'No\'}】, ②html【<span>{{ publishedBooksMessage }}</span>】',
+      codeVmethods: '①methods【calculateBooksMessage() {return this.author.books.length > 0 ? \'Yes\' : \'No\'}】, ②html【<span>{{ calculateBooksMessage() }}</span>】'
     }
+  },
+  watch: {
+    // whenever question changes, this function will run
+    question (newQuestion, oldQuestion) {
+      if (newQuestion.indexOf('?') > -1) {
+        this.getAnswer()
+      }
+    }
+  },
+  computed: {
+    publishedBooksMessage () {
+      return this.author.books.length > 0 ? 'Yes' : 'No'
+    },
+    now () {
+      return Date.now()
+    },
+    fullName () {
+      return 'computed➜' + this.firstName + ' ' + this.lastName
+    }
+  },
+  methods: {
+    calculateBooksMessage () {
+      return this.author.books.length > 0 ? 'Yes' : 'No'
+    },
+    getAnswer () {
+      // 使用axios 在index.html需引入
+      this.answer = 'Thinking...'
+      // eslint-disable-next-line no-undef
+      axios
+        .get('https://yesno.wtf/api')
+        .then(response => {
+          this.answer = response.data.answer
+        })
+        .catch(error => {
+          this.answer = 'Error! Could not reach the API. ' + error
+        })
+    }
+    // firstName(val) {
+    //     this.fullName = val + ' ' + this.lastName
+    // },
+    // lastName(val) {
+    //     this.fullName = this.firstName + ' ' + val
+    // }
+  }
 }
 </script>

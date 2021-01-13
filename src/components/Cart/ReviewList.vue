@@ -15,9 +15,8 @@
   </div>
 </template>
 
-
 <script>
-export default {    
+export default {
   name: 'ReviewList',
   props: {
     reviews: {

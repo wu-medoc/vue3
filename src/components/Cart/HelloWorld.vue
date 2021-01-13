@@ -1,5 +1,5 @@
 <template>
-  <div class="flexCenter">  
+  <div class="flexCenter">
     <img alt="Vue logo" class="logo" src="../../assets/logo.png"><a href="/"><h1>{{ msg }}</h1></a>
   </div>
   <div class="hello">
@@ -19,12 +19,12 @@
             <ul>
               <li v-for="detail in details" :key="detail.id">{{ detail }}</li>
             </ul>
-            <div v-for="(variant, index) in variants" :key="variant.id" 
+            <div v-for="(variant, index) in variants" :key="variant.id"
               @mouseover="updateVariant(index)"
               class="color-circle"
               :style="{ backgroundColor: variant.color }">
             </div>
-            <div class="flexCenter"> 
+            <div class="flexCenter">
               <button class="button" v-on:click="cart += 1">Add to Cart</button>
               <button class="button" :class="{ disabledButton: !inStock }" :disabled="!inStock" v-on:click="addToCart">Add to Cart</button>
               <button class="button" :class="{ disabledButton: !inStock }" :disabled="!inStock" @click="addToCart">Add to Cart</button>
@@ -39,7 +39,7 @@
           </div>
           <div class="product-info">
             <h1>{{ brand + ' ' + product }}</h1>
-            <div v-for="(variant, index) in variants" :key="variant.id" 
+            <div v-for="(variant, index) in variants" :key="variant.id"
               @mouseover="updateImage(variant.image, index)"
               class="color-circle" :class="[isActive === variant.id ? 'activeClass': '']"
               :style="{ backgroundColor: variant.color }">
@@ -57,7 +57,7 @@ export default {
   props: {
     msg: String
   },
-  data() {
+  data () {
     return {
       cart: 0,
       product: 'Socks',
@@ -68,42 +68,42 @@ export default {
       images: require('@/assets/images/socks_blue.jpg'),
       variants: [
         { id: 2234, color: 'green', image: require('@/assets/images/socks_green.jpg'), quantity: 50 },
-        { id: 2235, color: 'blue', image: require('@/assets/images/socks_blue.jpg'), quantity: 0 },
+        { id: 2235, color: 'blue', image: require('@/assets/images/socks_blue.jpg'), quantity: 0 }
       ],
       selectedVariant: 0,
-      idx: 0,
+      idx: 0
     }
   },
   methods: {
-    addToCart() {
+    addToCart () {
       this.cart += 1
     },
-    updateImage(variantImage, index) {
+    updateImage (variantImage, index) {
       this.images = variantImage
       this.idx = index
       // window.console.log()
     },
-    updateVariant(index) {
+    updateVariant (index) {
       this.selectedVariant = index
     }
   },
   computed: {
-    title() {
+    title () {
       return this.brand + ' ' + this.product
     },
-    image() {
+    image () {
       return this.variants[this.selectedVariant].image
     },
-    inStock() {
+    inStock () {
       return this.variants[this.selectedVariant].quantity
     },
-    isActive() {
+    isActive () {
       return this.variants[this.idx].id
     },
-    sale() {
+    sale () {
       if (this.inStock) {
-        return this.variants[this.selectedVariant].color + " is on sale."
-      }else{
+        return this.variants[this.selectedVariant].color + ' is on sale.'
+      } else {
         return this.variants[this.selectedVariant].color + " isn't sale."
       }
     }

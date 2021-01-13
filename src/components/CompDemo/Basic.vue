@@ -19,45 +19,44 @@
 </template>
 <script>
 
-    //   ** Vue2 **
-    //   Vue.component("tab-home", {
-    //     template: "<div>Home component</div>"
-    //   });
-    //   Vue.component("tab-posts", {
-    //     template: "<div>Posts component</div>"
-    //   });
-    //   Vue.component("tab-archive", {
-    //     template: "<div>Archive component</div>"
-    //   });
+//   ** Vue2 **
+//   Vue.component("tab-home", {
+//     template: "<div>Home component</div>"
+//   });
+//   Vue.component("tab-posts", {
+//     template: "<div>Posts component</div>"
+//   });
+//   Vue.component("tab-archive", {
+//     template: "<div>Archive component</div>"
+//   });
 
-    //   new Vue({
-    //     el: "#dynamic-component-demo",
-    //     data: {
-    //       currentTab: "Home",
-    //       tabs: ["Home", "Posts", "Archive"]
-    //     },
-    //     computed: {
-    //       currentTabComponent: function() {
-    //         return "tab-" + this.currentTab.toLowerCase();
-    //       }
-    //     }
-    //   });
+//   new Vue({
+//     el: "#dynamic-component-demo",
+//     data: {
+//       currentTab: "Home",
+//       tabs: ["Home", "Posts", "Archive"]
+//     },
+//     computed: {
+//       currentTabComponent: function() {
+//         return "tab-" + this.currentTab.toLowerCase();
+//       }
+//     }
+//   });
 
-
-    export default {
-        name: 'Basic',
-        data() {
-            return {
-                currentTab: "Home",
-                tabs: ["Home", "Posts", "Archive"],
-            }
-        },
-        computed: {
-            currentTabComponent: function() {
-                return "tab-" + this.currentTab.toLowerCase();
-            }
-        }
+export default {
+  name: 'Basic',
+  data () {
+    return {
+      currentTab: 'Home',
+      tabs: ['Home', 'Posts', 'Archive']
     }
+  },
+  computed: {
+    currentTabComponent: function () {
+      return 'tab-' + this.currentTab.toLowerCase()
+    }
+  }
+}
 </script>
 
 <style>

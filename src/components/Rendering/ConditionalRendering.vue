@@ -28,7 +28,7 @@
             Not A/B/C
         </div>
         <div v-text="codeVelseif" class="codeText"></div>
-        
+
         <strong>v-show</strong>
         <p v-show="awesome">Hello!</p>
         <div v-text="codeVshow" class="codeText"></div>
@@ -45,15 +45,15 @@
 </template>
 <script>
 export default {
-    name: 'ConditionalRendering',
-    data(){
-        return{
-            awesome: true,
-            codeVif: '<p v-if="awesome">Vue is awesome!</p>',
-            codeVelse: '<div v-if="Math.random() > 0.5">Now you see me</div><div v-else>Now you don\'t</div>',
-            codeVelseif: '<div v-if="type === \'A\'">A</div><div v-else-if="type === \'B\'">B</div><div v-else-if="type === \'C\'">C</div><div v-else>Not A/B/C</div>',
-            codeVshow: '<p v-show="awesome">Hello!</p>'
-        }
+  name: 'ConditionalRendering',
+  data () {
+    return {
+      awesome: true,
+      codeVif: '<p v-if="awesome">Vue is awesome!</p>',
+      codeVelse: '<div v-if="Math.random() > 0.5">Now you see me</div><div v-else>Now you don\'t</div>',
+      codeVelseif: '<div v-if="type === \'A\'">A</div><div v-else-if="type === \'B\'">B</div><div v-else-if="type === \'C\'">C</div><div v-else>Not A/B/C</div>',
+      codeVshow: '<p v-show="awesome">Hello!</p>'
     }
+  }
 }
 </script>

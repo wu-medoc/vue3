@@ -8,7 +8,7 @@
 
         <div id="event-with-method">
             <button @click="greet">Greet</button>
-        </div>        
+        </div>
         <div v-text="codeVmethods" class="codeText"></div>
 
         <div id="inline-handler">
@@ -57,7 +57,7 @@
         <h3>關鍵修飾符</h3>
         <p class="text-fix">在監聽鍵盤事件時，我們經常需要檢查特定的鍵。Vue允許在監聽關鍵事件時v-on或@在監聽關鍵事件時添加關鍵修飾符。通過將它們轉換為kebab-case，可以直接使用通過as修飾符公開的任何有效鍵名。在以下示例中，僅當$event.key等於時才調用處理程序'PageDown'。</p>
         <div v-text="codeVkey" class="codeText"></div>
-        
+
         <h3>關鍵別名</h3>
         <ul class="square">
             <li>.enter</li>
@@ -104,44 +104,44 @@
 </template>
 <script>
 export default {
-    name: 'ListeningEvents',
-    data() {
-        return {
-            counter: 1,
-            name: 'Vue.js',
-            codeVclick: '<button @click="counter += 1">Add 1</button><p>The button above has been clicked {{ counter }} times.</p></div>',
-            codeVmethods: '①<button @click="greet">Greet</button> ②methods: {greet(event) {alert(\'Hello \' + this.name + \'!\') if (event) {alert(event.target.tagName)}}}',
-            codeVsay: '①<button @click="say(\'hi\')">Say hi</button><button @click="say(\'what\')">Say what</button> ②methods: {say(message) { alert(message) }}',
-            codeVevent: '①<button @click="warn(\'Form cannot be submitted yet.\', $event)">Submit</button> ②methods: {warn(message, event) {if (event) {event.preventDefault()} alert(message)}}',
-            codeVmutli: '①<button @click="one($event), two($event)">Submit</button> ②methods: {one(event) {alert(event.target.tagName+"first event")}, two(event) {alert(event.target.tagName+"second event")}}',
-            codeVkey: '<input @keyup.page-down="onPageDown" />',
-            codeVsys1: 'Alt + Enter → <input @keyup.alt.enter="clear" />',
-            codeVsys2: 'Ctrl + Click → <div @click.ctrl="doSomething">Do something</div>',
-            codeV: '① ②',
-        }
-    },
-    methods: {
-        greet(event) {
-            alert('Hello ' + this.name + '!')
-            if (event) {
-                alert(event.target.tagName)
-            }
-        },
-        say(message) {
-            alert(message)
-        },
-        warn(message, event) {
-            if (event) {
-                event.preventDefault()
-            }
-            alert(message)
-        },
-        one(event) {
-            alert(event.target.tagName+"first event")
-        },
-        two(event) {
-            alert(event.target.tagName+"second event")
-        }
+  name: 'ListeningEvents',
+  data () {
+    return {
+      counter: 1,
+      name: 'Vue.js',
+      codeVclick: '<button @click="counter += 1">Add 1</button><p>The button above has been clicked {{ counter }} times.</p></div>',
+      codeVmethods: '①<button @click="greet">Greet</button> ②methods: {greet(event) {alert(\'Hello \' + this.name + \'!\') if (event) {alert(event.target.tagName)}}}',
+      codeVsay: '①<button @click="say(\'hi\')">Say hi</button><button @click="say(\'what\')">Say what</button> ②methods: {say(message) { alert(message) }}',
+      codeVevent: '①<button @click="warn(\'Form cannot be submitted yet.\', $event)">Submit</button> ②methods: {warn(message, event) {if (event) {event.preventDefault()} alert(message)}}',
+      codeVmutli: '①<button @click="one($event), two($event)">Submit</button> ②methods: {one(event) {alert(event.target.tagName+"first event")}, two(event) {alert(event.target.tagName+"second event")}}',
+      codeVkey: '<input @keyup.page-down="onPageDown" />',
+      codeVsys1: 'Alt + Enter → <input @keyup.alt.enter="clear" />',
+      codeVsys2: 'Ctrl + Click → <div @click.ctrl="doSomething">Do something</div>',
+      codeV: '① ②'
     }
+  },
+  methods: {
+    greet (event) {
+      alert('Hello ' + this.name + '!')
+      if (event) {
+        alert(event.target.tagName)
+      }
+    },
+    say (message) {
+      alert(message)
+    },
+    warn (message, event) {
+      if (event) {
+        event.preventDefault()
+      }
+      alert(message)
+    },
+    one (event) {
+      alert(event.target.tagName + 'first event')
+    },
+    two (event) {
+      alert(event.target.tagName + 'second event')
+    }
+  }
 }
 </script>

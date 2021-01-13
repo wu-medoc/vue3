@@ -6,10 +6,10 @@
 
 module.exports = {
   publicPath: './',
-  outputDir: "dist", // 输出文件目录
+  outputDir: 'dist', // 输出文件目录
   lintOnSave: false, // eslint 是否在保存时检查
   assetsDir: 'static', // 配置js、css静态资源二级目录的位置
-  indexPath: 'index.html',  
+  indexPath: 'index.html'
   // pages: {
   //   index: {
   //     // page 的入口
@@ -30,7 +30,7 @@ module.exports = {
   //   // 并且如果找不到的话，就回退到 `public/index.html`。
   //   // 输出文件名会被推导为 `subpage.html`。
   //   subpage: 'src/subpage/main.js'
-  // },  
+  // },
   // // 通过设置让浏览器 overlay 同时显示警告和错误
   // devServer: {
   //   overlay: {

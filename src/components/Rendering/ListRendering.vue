@@ -42,21 +42,21 @@
 </template>
 <script>
 export default {
-    name: 'ListRendering',
-    data() {
-        return {
-            parentMessage:'Parent',
-            items: [{ message: 'Foo' }, { message: 'Bar' }],
-            myObject: {
-                title: 'How to do lists in Vue',
-                author: 'Jane Doe',
-                publishedAt: '2020-03-22'
-            },
-            codeVfor: '①<li v-for="item in items">{{ item.message }}</li> ②data() {return {items: [{ message: \'Foo\' }, { message: \'Bar\' }]}}',
-            codeVfor1: '①<li v-for="(item, index) of items">{{ parentMessage }} - {{ index }} - {{ item.message }}</li> ②data() {return {parentMessage:\'Parent\', items: [{ message: \'Foo\' }, { message: \'Bar\' }]}}',
-            codeVobj: '①<li v-for="(value, name, index) in myObject" :key="index">{{ index }}. {{ name }}: {{ value }}</li> ②data() {return { myObject: {title: \'How to do lists in Vue\',author: \'Jane Doe\',publishedAt: \'2020-03-22\'}}}',
+  name: 'ListRendering',
+  data () {
+    return {
+      parentMessage: 'Parent',
+      items: [{ message: 'Foo' }, { message: 'Bar' }],
+      myObject: {
+        title: 'How to do lists in Vue',
+        author: 'Jane Doe',
+        publishedAt: '2020-03-22'
+      },
+      codeVfor: '①<li v-for="item in items">{{ item.message }}</li> ②data() {return {items: [{ message: \'Foo\' }, { message: \'Bar\' }]}}',
+      codeVfor1: '①<li v-for="(item, index) of items">{{ parentMessage }} - {{ index }} - {{ item.message }}</li> ②data() {return {parentMessage:\'Parent\', items: [{ message: \'Foo\' }, { message: \'Bar\' }]}}',
+      codeVobj: '①<li v-for="(value, name, index) in myObject" :key="index">{{ index }}. {{ name }}: {{ value }}</li> ②data() {return { myObject: {title: \'How to do lists in Vue\',author: \'Jane Doe\',publishedAt: \'2020-03-22\'}}}'
 
-        }
     }
+  }
 }
 </script>

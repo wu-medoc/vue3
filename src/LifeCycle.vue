@@ -42,50 +42,52 @@
 </template>
 
 <script>
-import { ref, watchEffect, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, 
-onRenderTracked, onRenderTriggered, onActivated, onDeactivated, onErrorCaptured } from 'vue';
+import {
+  ref, watchEffect, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted,
+  onRenderTracked, onRenderTriggered, onActivated, onDeactivated, onErrorCaptured
+} from 'vue'
 
 export default {
   name: 'LifeCycle',
-  setup() {
-    const id = ref(1) 
-    console.log('setup') 
-    watchEffect(() => { console.log('watchEffect') }) 
-    onBeforeMount(() => { console.log('onBeforeMount') }) 
-    onMounted(() => { console.log('onMounted') }) 
-    onBeforeUpdate(() => { console.log('onBeforeUpdate') }) 
-    onUpdated(() => { console.log('onUpdated') }) 
-    onBeforeUnmount(() => { console.log('onBeforeUnmount') }) 
-    onUnmounted(() => { console.log('onUnmounted') })  
-    onActivated(() => { console.log('onActivated') })  
-    onDeactivated(() => { console.log('onDeactivated') })  
-    onErrorCaptured(() => { console.log('onErrorCaptured') }) 
-    onRenderTracked(({ key, target, type }) => { 
-      console.log('onRenderTracked') 
+  setup () {
+    const id = ref(1)
+    console.log('setup')
+    watchEffect(() => { console.log('watchEffect') })
+    onBeforeMount(() => { console.log('onBeforeMount') })
+    onMounted(() => { console.log('onMounted') })
+    onBeforeUpdate(() => { console.log('onBeforeUpdate') })
+    onUpdated(() => { console.log('onUpdated') })
+    onBeforeUnmount(() => { console.log('onBeforeUnmount') })
+    onUnmounted(() => { console.log('onUnmounted') })
+    onActivated(() => { console.log('onActivated') })
+    onDeactivated(() => { console.log('onDeactivated') })
+    onErrorCaptured(() => { console.log('onErrorCaptured') })
+    onRenderTracked(({ key, target, type }) => {
+      console.log('onRenderTracked')
       console.log({ key, target, type })
-    }) 
-    onRenderTriggered((e) => { 
-      console.log('onRenderTriggered') 
+    })
+    onRenderTriggered((e) => {
+      console.log('onRenderTriggered')
       console.log(Object.values(e))
-    }) 
-    setTimeout(() => { id.value = 2; }, 2000) 
-    return { id } 
-  }, 
-  data() { 
-    console.log('data') 
-    return { name: 'LifeCycle' } 
-  }, 
-  beforeCreate() { console.log('beforeCreate') }, 
-  created() { console.log('created') }, 
-  beforeMount() { console.log('beforeMount') }, 
-  mounted() { 
-    console.log('mounted') 
-    setTimeout(() => { this.id = 3; }, 4000) 
-  }, 
-  beforeUpdate() { console.log('beforeUpdate') }, 
-  updated() { console.log('updated') }, 
-  beforeUnmount() { console.log('beforeUnmount') }, 
-  unmounted() { console.log('unmounted') }
+    })
+    setTimeout(() => { id.value = 2 }, 2000)
+    return { id }
+  },
+  data () {
+    console.log('data')
+    return { name: 'LifeCycle' }
+  },
+  beforeCreate () { console.log('beforeCreate') },
+  created () { console.log('created') },
+  beforeMount () { console.log('beforeMount') },
+  mounted () {
+    console.log('mounted')
+    setTimeout(() => { this.id = 3 }, 4000)
+  },
+  beforeUpdate () { console.log('beforeUpdate') },
+  updated () { console.log('updated') },
+  beforeUnmount () { console.log('beforeUnmount') },
+  unmounted () { console.log('unmounted') }
 }
 </script>
 

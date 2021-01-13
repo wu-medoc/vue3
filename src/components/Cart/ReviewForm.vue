@@ -4,7 +4,7 @@
     <label for="name">Name:</label>
     <input id="name" v-model="name">
 
-    <label for="review">Review:</label>      
+    <label for="review">Review:</label>
     <textarea id="review" v-model="review"></textarea>
 
     <label for="rating">Rating:</label>
@@ -22,32 +22,32 @@
       <option>Yes</option>
       <option>No</option>
     </select>
-    <!-- solution -->   
+    <!-- solution -->
 
-    <input class="button" type="submit" value="Submit">  
+    <input class="button" type="submit" value="Submit">
 
   </form>
 </template>
 
 <script>
-export default {    
+export default {
   name: 'ReviewForm',
-  data() {
+  data () {
     return {
       name: '',
       review: '',
-      rating: null,     
-      recommend: null     
+      rating: null,
+      recommend: null
     }
   },
   methods: {
-    onSubmit() {
+    onSubmit () {
       if (this.name === '' || this.review === '' || this.rating === null || this.recommend === null) {
         alert('Review is incomplete. Please fill out every field.')
         return
       }
 
-      let productReview = {
+      const productReview = {
         name: this.name,
         review: this.review,
         rating: this.rating,
@@ -60,7 +60,6 @@ export default {
       this.review = ''
       this.rating = null
       this.recommend = null
-
     }
   }
 }

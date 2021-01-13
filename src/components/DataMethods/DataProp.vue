@@ -7,21 +7,21 @@
 </template>
 <script>
 export default {
-    name: 'DataProp',
-    data() {
-        return { 
-            count: 4,
-            codeVdata: '<div>{{ count }} / {{ $data.count }} / {{ this.count }}</div>'
-        }
-    },
-    mounted() {
-        this.count = 5
-        this.increment()
-    },
-    methods: {
-        increment() {
-            this.count++
-        }
+  name: 'DataProp',
+  data () {
+    return {
+      count: 4,
+      codeVdata: '<div>{{ count }} / {{ $data.count }} / {{ this.count }}</div>'
     }
+  },
+  mounted () {
+    this.count = 5
+    this.increment()
+  },
+  methods: {
+    increment () {
+      this.count++
+    }
+  }
 }
 </script>

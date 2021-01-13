@@ -1,4 +1,5 @@
 <template>
+  <Plus />
   <!-- <HelloWorld msg="Vue3 Demo"/> -->
   <div>
       <div class="nav-bar flexCenter">LifeCycle</div>
@@ -10,34 +11,34 @@
       <Directives />
   </div>
   <div>
-      <div class="nav-bar flexCenter">Data / Methods / Computed / Watchers</div>      
-      <DataProp />  
+      <div class="nav-bar flexCenter">Data / Methods / Computed / Watchers</div>
+      <DataProp />
       <ComputedProp />
   </div>
   <div>
-      <div class="nav-bar flexCenter">Bindings</div>      
-      <HtmlClasses />  
+      <div class="nav-bar flexCenter">Bindings</div>
+      <HtmlClasses />
       <InlineStyles />
       <FormInput />
   </div>
   <div>
-      <div class="nav-bar flexCenter">Form Demo</div>    
+      <div class="nav-bar flexCenter">Form Demo</div>
       <FormDemo />
   </div>
   <div>
-      <div class="nav-bar flexCenter">Components Basics</div> 
-      <Basic /> 
-      <Blog /> 
+      <div class="nav-bar flexCenter">Components Basics</div>
+      <Basic />
+      <Blog />
   </div>
   <div>
-      <div class="nav-bar flexCenter">Components In-Depth</div>    
+      <div class="nav-bar flexCenter">Components In-Depth</div>
   </div>
   <div>
-      <div class="nav-bar flexCenter">Events Handling</div>    
+      <div class="nav-bar flexCenter">Events Handling</div>
       <ListeningEvents />
   </div>
   <div>
-      <div class="nav-bar flexCenter">Rendering Demo</div>    
+      <div class="nav-bar flexCenter">Rendering Demo</div>
       <RenderingDemo />
   </div>
   <div>
@@ -66,11 +67,13 @@ import FilterRendering from './components/Rendering/FilterRendering'
 import RenderingDemo from './components/Rendering/RenderingDemo'
 import ListeningEvents from './components/Events/ListeningEvents'
 import LifeCycle from './LifeCycle'
+import Plus from './components/Element/plus'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
+    Plus,
     ProductDisplay,
     LifeCycle,
     Interpolations,
@@ -83,25 +86,28 @@ export default {
     FormDemo,
     Basic,
     Blog,
+    // eslint-disable-next-line vue/no-unused-components
     ConditionalRendering,
+    // eslint-disable-next-line vue/no-unused-components
     ListRendering,
+    // eslint-disable-next-line vue/no-unused-components
     FilterRendering,
     RenderingDemo,
-    ListeningEvents,
+    ListeningEvents
   },
-  setup() {
+  setup () {
     return {
-    };
+    }
   },
-  data() {
+  data () {
     return {
-        cart: [],
-        premium: true,
-        count: 1
+      cart: [],
+      premium: true,
+      count: 1
     }
   },
   methods: {
-    updateCart(id) {
+    updateCart (id) {
       this.cart.push(id)
     }
   }

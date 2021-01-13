@@ -23,32 +23,32 @@
 </template>
 <script>
 export default {
-    name: 'HtmlClasses',
-    data() {
-        return {
-            activeClass: 'active',
-            errorClass: 'text-danger',
-            isActive: true,
-            error: false,            
-            classObject1: {
-                active: true,
-                'text-danger': false
-            },
-            codeVhtml: '①<div class="static" :class="{ active: isActive, \'text-danger\': error }"\></div> ②data() {return {isActive: true, hasError: false}}',
-            codeVobj1: '①<div :class="classObject1"></div> ②data() {return {classObject1: {active: true, \'text-danger\': false}}}',
-            codeVobj2: '①<div :class="classObject2"></div> ②data() {return {isActive: true, error: null}},computed: {classObject2: {return {active: this.isActive && !this.error, \'text-danger\': this.error && this.error.type === \'fatal\'}}}',
-            codeVmutli: '①<div :class="[activeClass, errorClass]"></div> ②data() {return {activeClass: \'active\', errorClass: \'text-danger\'}}',
-            codeV3: '🔈<div :class="[isActive ? activeClass : \'\', errorClass]"></div> 🔈<div :class="[{ active: isActive }, errorClass]"></div>'
-        }
-    },
-    computed: {
-        classObject2() {
-            return {
-                active: this.isActive && !this.error,
-                'text-danger': this.error && this.error.type === 'fatal'
-            }
-        }
+  name: 'HtmlClasses',
+  data () {
+    return {
+      activeClass: 'active',
+      errorClass: 'text-danger',
+      isActive: true,
+      error: false,
+      classObject1: {
+        active: true,
+        'text-danger': false
+      },
+      codeVhtml: '①<div class="static" :class="{ active: isActive, \'text-danger\': error }"></div> ②data() {return {isActive: true, hasError: false}}',
+      codeVobj1: '①<div :class="classObject1"></div> ②data() {return {classObject1: {active: true, \'text-danger\': false}}}',
+      codeVobj2: '①<div :class="classObject2"></div> ②data() {return {isActive: true, error: null}},computed: {classObject2: {return {active: this.isActive && !this.error, \'text-danger\': this.error && this.error.type === \'fatal\'}}}',
+      codeVmutli: '①<div :class="[activeClass, errorClass]"></div> ②data() {return {activeClass: \'active\', errorClass: \'text-danger\'}}',
+      codeV3: '🔈<div :class="[isActive ? activeClass : \'\', errorClass]"></div> 🔈<div :class="[{ active: isActive }, errorClass]"></div>'
     }
+  },
+  computed: {
+    classObject2 () {
+      return {
+        active: this.isActive && !this.error,
+        'text-danger': this.error && this.error.type === 'fatal'
+      }
+    }
+  }
 }
 
 </script>

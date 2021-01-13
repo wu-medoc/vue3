@@ -12,7 +12,7 @@
         <div v-text="codeVbind2" class="codeText"></div>
         <p>帶有動態參數的簡寫</p>
         <div v-text="codeVbind3" class="codeText"></div>
-        
+
         <strong>v-on 速記</strong>
         <p>完整語法</p>
         <div v-text="codeVon1" class="codeText"></div>
@@ -29,18 +29,18 @@
 <script>
 export default {
   name: 'Directives',
-    data() {
-        return {
-            seen: true,
-            msg: 'Directives',
-            codeVif: '🔈<p v-if="seen">Now you see me</p> 🔈<p v-if="!seen">You can\'t see me.</p>',
-            codeVbind1: '<a v-bind:href="url"> ... </a>',
-            codeVbind2: '<a :href="url"> ... </a>',
-            codeVbind3: '<a :[key]="url"> ... </a>',
-            codeVon1: '<a v-on:click="doSomething"> ... </a>',
-            codeVon2: '<a @click="doSomething"> ... </a>',
-            codeVon3: '<a @[event]="doSomething"> ... </a>',
-        }
+  data () {
+    return {
+      seen: true,
+      msg: 'Directives',
+      codeVif: '🔈<p v-if="seen">Now you see me</p> 🔈<p v-if="!seen">You can\'t see me.</p>',
+      codeVbind1: '<a v-bind:href="url"> ... </a>',
+      codeVbind2: '<a :href="url"> ... </a>',
+      codeVbind3: '<a :[key]="url"> ... </a>',
+      codeVon1: '<a v-on:click="doSomething"> ... </a>',
+      codeVon2: '<a @click="doSomething"> ... </a>',
+      codeVon3: '<a @[event]="doSomething"> ... </a>'
     }
+  }
 }
 </script>
