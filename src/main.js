@@ -11,8 +11,7 @@ import {
   ElLoading,
   ElMessage,
   ElMessageBox,
-  ElNotification,
-  ElementPlus
+  ElNotification
 } from 'element-plus'
 
 const components = [
@@ -40,9 +39,8 @@ components.forEach(component => {
 })
 
 plugins.forEach(plugin => {
-  app.use(plugin)
+  app.use(plugin, { size: 'small', zIndex: 3000 })
 })
 
-app.use(ElementPlus, { size: 'small', zIndex: 3000 });
 app.mount('#app')
 // app.use(VueSvgIconPlugin, { tagName: 'svg' }).mount('#app')
