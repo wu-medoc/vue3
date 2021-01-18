@@ -36,11 +36,6 @@ const components = [
 ]
 
 const plugins = [
-  ElLink,
-  ElMain,
-  ElMenu,
-  ElMenuItem,
-  ElMenuItemGroup,
   ElInfiniteScroll,
   ElLoading,
   ElMessage,

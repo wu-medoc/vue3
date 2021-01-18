@@ -1,10 +1,10 @@
 <template>
+  <!-- <HelloWorld msg="Vue3 Demo"/> -->
   <div>
       <div class="nav-bar flexCenter">Components Basics</div>
       <Basic />
       <Blog />
   </div>
-  <!-- <HelloWorld msg="Vue3 Demo"/> -->
   <div>
       <div class="nav-bar flexCenter">Template-Syntax</div>
       <Interpolations />
@@ -91,11 +91,6 @@ export default {
   },
   data () {
     return {
-      navbars: [
-        { names: "Home", router: "/" },
-        { names: "LifeCycle", router: "/LifeCycle" },
-        { names: "ElementPlus", router: "/Plus" },
-      ],
       cart: [],
       premium: true,
       count: 1

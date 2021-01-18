@@ -1,27 +1,27 @@
-import { createWebHistory, createRouter } from "vue-router";
-import Home from "../Home.vue";
+import { createWebHistory, createRouter } from 'vue-router'
+import Home from '../Home.vue'
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
+    path: '/Home',
+    name: 'Home',
     component: Home
   },
   {
-    path: "/Plus",
-    name: "Plus",
+    path: '/Plus',
+    name: 'Plus',
     component: () => import('../components/Element/plus.vue')
   },
   {
-    path: "/LifeCycle",
-    name: "LifeCycle",
+    path: '/LifeCycle',
+    name: 'LifeCycle',
     component: () => import('../LifeCycle.vue')
-  },
-];
+  }
+]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router
