@@ -33,9 +33,9 @@ export default {
   data () {
     return {
       navbars: [
-        { names: "Home", router: "/" },
-        { names: "LifeCycle", router: "/LifeCycle" },
-        { names: "ElementPlus", router: "/Plus" },
+        { names: "Home", router: "./Home" },
+        { names: "LifeCycle", router: "./LifeCycle" },
+        { names: "ElementPlus", router: "./Plus" },
       ],
       cart: [],
       premium: true,

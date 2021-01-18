@@ -1,17 +1,16 @@
 import { createWebHistory, createRouter } from "vue-router";
-import Plus from "../components/Element/plus.vue";
 import Home from "../Home.vue";
 
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: Home
   },
   {
     path: "/Plus",
     name: "Plus",
-    component: Plus,
+    component: () => import('../components/Element/plus.vue')
   },
   {
     path: "/LifeCycle",

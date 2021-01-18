@@ -64,8 +64,6 @@ import ListRendering from './components/Rendering/ListRendering'
 import FilterRendering from './components/Rendering/FilterRendering'
 import RenderingDemo from './components/Rendering/RenderingDemo'
 import ListeningEvents from './components/Events/ListeningEvents'
-import LifeCycle from './LifeCycle'
-import Plus from './components/Element/plus'
 
 export default {
   name: 'Home',
