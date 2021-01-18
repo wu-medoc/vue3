@@ -70,9 +70,12 @@
         <span>Selected: {{ selected1 }}</span>
         <div v-text="codeFor" class="codeText"></div>
     </div>
+    <form-input></form-input>
 </template>
 <script>
+import FormInput from './FormInput.vue'
 export default {
+  components: { FormInput },
   name: 'FormDemo',
   data () {
     return {

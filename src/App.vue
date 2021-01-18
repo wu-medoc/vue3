@@ -1,99 +1,30 @@
 <template>
-  <Plus />
-  <!-- <HelloWorld msg="Vue3 Demo"/> -->
-  <div>
-      <div class="nav-bar flexCenter">LifeCycle</div>
-      <LifeCycle />
-  </div>
-  <div>
-      <div class="nav-bar flexCenter">Template-Syntax</div>
-      <Interpolations />
-      <Directives />
-  </div>
-  <div>
-      <div class="nav-bar flexCenter">Data / Methods / Computed / Watchers</div>
-      <DataProp />
-      <ComputedProp />
-  </div>
-  <div>
-      <div class="nav-bar flexCenter">Bindings</div>
-      <HtmlClasses />
-      <InlineStyles />
-      <FormInput />
-  </div>
-  <div>
-      <div class="nav-bar flexCenter">Form Demo</div>
-      <FormDemo />
-  </div>
-  <div>
-      <div class="nav-bar flexCenter">Components Basics</div>
-      <Basic />
-      <Blog />
-  </div>
-  <div>
-      <div class="nav-bar flexCenter">Components In-Depth</div>
-  </div>
-  <div>
-      <div class="nav-bar flexCenter">Events Handling</div>
-      <ListeningEvents />
-  </div>
-  <div>
-      <div class="nav-bar flexCenter">Rendering Demo</div>
-      <RenderingDemo />
-  </div>
-  <div>
-      <div class="nav-bar flexCenter">Cart Demo</div>
-      <div class="cart">Cart({{ cart.length }})</div>
-      <ProductDisplay :premium="premium"  @add-to-cart="updateCart" />
-  </div>
+    <el-menu
+      :default-active="$route.name"
+      class="el-menu-demo"
+      mode="horizontal"
+      @select="handleSelect"
+    >
+      <el-menu-item
+        v-for="(item, index) in navbars"
+        :key="index"
+        :index="item.names"
+      >
+        <router-link :to="{ path: item.router }">{{ item.names }}</router-link>
+      </el-menu-item>
+      <!-- <el-menu-item index="2"
+      ><router-link to="/about">About</router-link></el-menu-item> -->
+    </el-menu>
+    <router-view></router-view>
 </template>
 
 <script>
-// import HelloWorld from './components/Cart/HelloWorld.vue'
-import ProductDisplay from './components/Cart/ProductDisplay'
-import Interpolations from './components/Syntax/Interpolations'
-import Directives from './components/Syntax/Directives'
-import DataProp from './components/DataMethods/DataProp'
-import ComputedProp from './components/DataMethods/ComputedProp'
-import HtmlClasses from './components/Bindings/HtmlClasses'
-import InlineStyles from './components/Bindings/InlineStyles'
-import FormInput from './components/Bindings/FormInput'
-import FormDemo from './components/Bindings/FormDemo'
-import Basic from './components/CompDemo/Basic'
-import Blog from './components/CompDemo/Blog'
-import ConditionalRendering from './components/Rendering/ConditionalRendering'
-import ListRendering from './components/Rendering/ListRendering'
-import FilterRendering from './components/Rendering/FilterRendering'
-import RenderingDemo from './components/Rendering/RenderingDemo'
-import ListeningEvents from './components/Events/ListeningEvents'
-import LifeCycle from './LifeCycle'
-import Plus from './components/Element/plus'
+import Home from './Home'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
-    Plus,
-    ProductDisplay,
-    LifeCycle,
-    Interpolations,
-    Directives,
-    DataProp,
-    ComputedProp,
-    HtmlClasses,
-    InlineStyles,
-    FormInput,
-    FormDemo,
-    Basic,
-    Blog,
-    // eslint-disable-next-line vue/no-unused-components
-    ConditionalRendering,
-    // eslint-disable-next-line vue/no-unused-components
-    ListRendering,
-    // eslint-disable-next-line vue/no-unused-components
-    FilterRendering,
-    RenderingDemo,
-    ListeningEvents
+    Home,
   },
   setup () {
     return {
@@ -101,14 +32,14 @@ export default {
   },
   data () {
     return {
+      navbars: [
+        { names: "Home", router: "/" },
+        { names: "LifeCycle", router: "/LifeCycle" },
+        { names: "ElementPlus", router: "/Plus" },
+      ],
       cart: [],
       premium: true,
       count: 1
-    }
-  },
-  methods: {
-    updateCart (id) {
-      this.cart.push(id)
     }
   }
 }

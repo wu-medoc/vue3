@@ -1,4 +1,5 @@
 <template>
+    <p>v-on:enlarge-text="postFontSize += $event"</p>
     <div id="blog-posts-events-demo">
         <div>
             <blog-post
@@ -16,7 +17,17 @@
                 </div>
             </blog-post>
         </div>
-
+    </div>
+    <p>@enlarge-text="postFontSize += 0.1"</p>
+    <div id="blog-posts-events-demo2" class="demo">
+      <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post
+          v-for="post in posts"
+          :key="post.id"
+          :title="post.title"
+          @enlarge-text="postFontSize += 0.1"
+        ></blog-post>
+      </div>
     </div>
 </template>
 <script>

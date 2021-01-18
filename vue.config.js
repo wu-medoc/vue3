@@ -1,11 +1,7 @@
-// module.exports = {
-//   publicPath: process.env.NODE_ENV === 'production'
-//     ? '/vue3/'
-//     : '/'
-// }
-
 module.exports = {
-  publicPath: './',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/vue3/'
+    : '/',
   outputDir: 'dist', // 输出文件目录
   lintOnSave: false, // eslint 是否在保存时检查
   assetsDir: 'static', // 配置js、css静态资源二级目录的位置
@@ -14,7 +10,12 @@ module.exports = {
     config.performance
       .maxEntrypointSize(1000000)
       .maxAssetSize(1000000)
-  }
+  },
+  // vetur配置，會覆蓋vscode中的設定。  default: `{}`
+  // settings: {
+  //   'vetur.useWorkspaceDependencies': true,
+  //   'vetur.experimental.templateInterpolationService': true
+  // }
   // pages: {
   //   index: {
   //     // page 的入口
