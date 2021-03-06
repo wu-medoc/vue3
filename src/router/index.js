@@ -1,21 +1,40 @@
-import { createWebHistory, createRouter } from 'vue-router'
-import Home from '../Home.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '@/Home.vue'
+import ChildRouter from '@/components/Nested/ChildRouter.vue'
+import NestedContent from '@/components/Nested/NestedContent.vue'
 
 const routes = [
   {
-    path: '/Home',
+    path: '/vue3/',
     name: 'Home',
     component: Home
   },
   {
-    path: '/Plus',
+    path: '/vue3/Plus',
     name: 'Plus',
-    component: () => import('../components/Element/plus.vue')
+    component: () => import('@/components/Element/plus.vue')
   },
   {
-    path: '/LifeCycle',
+    path: '/vue3/LifeCycle',
     name: 'LifeCycle',
-    component: () => import('../LifeCycle.vue')
+    component: () => import('@/LifeCycle.vue')
+  },
+  {
+    path: '/vue3/Nested',
+    name: 'Nested',
+    component: () => import('@/Nested.vue'),
+    children: [
+      {
+        path: 'NestedContent',
+        name: 'NestedContent',
+        component: NestedContent
+      },
+      {
+        path: 'Child/:id(\\d+)',
+        name: 'ChildRouter',
+        component: ChildRouter
+      }
+    ]
   }
 ]
 

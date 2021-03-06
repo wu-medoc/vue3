@@ -3,14 +3,13 @@
       :default-active='$route.name'
       class='el-menu-demo'
       mode='horizontal'
-      @select='handleSelect'
     >
       <el-menu-item
         v-for='(item, index) in navbars'
         :key='index'
         :index='item.names'
       >
-        <router-link :to='{ path: item.router }'>{{ item.names }}</router-link>
+        <router-link :to='{path: item.router }'>{{ item.names }}</router-link>
       </el-menu-item>
       <!-- <el-menu-item index='2'
       ><router-link to='/about'>About</router-link></el-menu-item> -->
@@ -29,9 +28,10 @@ export default {
   data () {
     return {
       navbars: [
-        { names: 'Home', router: './Home' },
-        { names: 'LifeCycle', router: './LifeCycle' },
-        { names: 'ElementPlus', router: './Plus' }
+        { names: 'Home', router: '/vue3/' },
+        { names: 'LifeCycle', router: '/vue3/LifeCycle' },
+        { names: 'ElementPlus', router: '/vue3/Plus' },
+        { names: 'Nested', router: '/vue3/Nested/NestedContent' }
       ],
       cart: [],
       premium: true,

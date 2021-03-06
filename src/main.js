@@ -2,9 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import '@yzfe/svgicon/lib/svgicon.css'
-
 import 'element-plus/lib/theme-chalk/index.css'
+
 import {
   ElLink,
   ElMain,
@@ -19,6 +18,8 @@ import {
   ElMessageBox,
   ElNotification
 } from 'element-plus'
+
+import store from './store'
 
 const components = [
   ElLink,
@@ -43,7 +44,7 @@ const plugins = [
   ElNotification
 ]
 
-const app = createApp(App)
+const app = createApp(App).use(store).use(router)
 
 components.forEach(component => {
   app.component(component.name, component)
