@@ -7,7 +7,6 @@
 export default {
   name: 'ChildRouter',
   props: ['uid', 'test'],
-
   beforeRouteEnter (to, from, next) {
     next()
   },
