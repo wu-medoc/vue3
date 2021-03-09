@@ -44,7 +44,9 @@ const plugins = [
   ElNotification
 ]
 
-const app = createApp(App).use(store).use(router)
+const app = createApp(App)
+app.config.devtools = true
+app.use(store).use(router)
 
 components.forEach(component => {
   app.component(component.name, component)
