@@ -83,7 +83,7 @@ export default {
       checked: false,
       checkedNames: [],
       picked: '',
-      selected: '',
+      selected: 'A',
       selected1: 'A',
       options: [
         { text: 'One', value: 'A' },

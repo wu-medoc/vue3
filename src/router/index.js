@@ -98,7 +98,7 @@ router.beforeEach((to, from, next) => {
   // 第一次從其他地方進來網站
 
   // 確保client side render 頁面導頁面，不是第一次從其他地方進來網站才要判斷 lightbox
-  if (from.matched.length) {
+  if (from.matched.length > 1) {
     const fromMatch = from.matched[1]
     const toMatch = to.matched[1]
     let defaultComponent = null // lightbox下當襯底的人
@@ -114,7 +114,7 @@ router.beforeEach((to, from, next) => {
       // 新的來之前先關掉，先復原
       fromMatch.components.default = fromMatch.components.lightbox
       fromMatch.components.lightbox = null
-      fromMatch.meta.lightbox = false
+      to.meta.lightbox = false
     }
 
     // 處理 to: 站內路由互換，要判斷你是不是去 content還有lightbox有無墊底，是，那就切換位置，打開 lightbox
