@@ -1,0 +1,60 @@
+<template>
+<h2>Store & mapState</h2>
+  <div>count: {{ count }}</div>
+  <div>$store.state.count: {{ $store.state.count }}</div>
+  <div>localCount: {{ localCount }}</div>
+  <div>countAlias: {{ countAlias }}</div>
+  <div>countPlusLocalState: {{ countPlusLocalState }}</div>
+<hr>
+<h2>Getters</h2>
+  <div><b>doneTodos:</b> <br>{{ doneTodos }} <br> {{ $store.getters.doneTodos }}</div>
+  <div><b>doneTodosCount:</b> <br>{{ doneTodosCount }} <br> {{ $store.getters.doneTodosCount }}</div>
+  <div><b>getTodoById(2):</b> <br>{{ getTodoById }} <br> {{ $store.getters.getTodoById(2) }}</div>
+  <div><b>getTodoById(1):</b> <br>{{ getTodoById1 }} <br> {{ $store.getters.getTodoById1(1) }}</div>
+  <div><b>oddNumbers:</b> <br>{{ oddNumbers }} </div>
+  <div><b>evenNumbers:</b> <br>{{ evenNumbers }} </div>
+<hr>
+<h2>Mutations</h2>
+  <div>count: {{ count }}
+    <button @click='increment'>+</button>
+  </div>
+</template>
+
+<script>
+import { mapState, mapGetters } from 'vuex'
+
+export default {
+  data () {
+    return {
+      localCount: 4
+    }
+  },
+  computed: {
+    ...mapState({
+      count: state => state.count,
+      countAlias: 'count',
+      countPlusLocalState (state) {
+        return state.count + this.localCount
+      }
+    }),
+    ...mapGetters([
+      'doneTodos', 'doneTodosCount', 'getTodoById', 'getTodoById1', 'oddNumbers', 'evenNumbers'
+    ])
+  },
+  // computed: mapState({
+  //   count: state => state.count,
+  //   countAlias: 'count',
+  //   countPlusLocalState (state) {
+  //     return state.count + this.localCount
+  //   }
+  // })
+  // computed: mapState([
+  //   'count'
+  // ])
+  methods: {
+    increment () {
+      this.$store.commit('INCREMENT')
+    }
+  }
+}
+</script>
