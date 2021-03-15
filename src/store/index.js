@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import { SET_COUNT } from './mutation-types'
 
 export default createStore({
   state: {
@@ -48,12 +49,44 @@ export default createStore({
     INCREMENT (state) {
       state.count++
     },
-    SET_COUNT (state, num) {
-      state.count = num
+    // []定義參數
+    [SET_COUNT] (state, payload) {
+      state.count = payload.count
     }
   },
   actions: {
+    ACT_COUNT ({ commit }) {
+      commit('INCREMENT')
+    },
+    INCREMENT_ASYNC ({ commit, state }) {
+      return new Promise((resolve, reject) => {
+        // setTimeout(() => {
+        //   try {
+        //     axios.err().then((res) => {
+        //        // status code 2xx, 3xx
+        //        commit(SET_COUNT, { count: state.count + 1 })
+        //        resolve({ data: { count: state.count }})
+        //     }).catch((res) => {
+        //        // status code 4xx, 5xx
+        //        commit(SET_ERR_MSG, { text: res.message })
+        //        resolve(err[res.status])
+        //   })
+        //     // axios這段故意寫錯
+        //   } catch (e) {
+        //     resolve({ err: 'error' })
+        //      // 在此攔截錯誤，避免錯誤外擴
+        //   }
+        // }, 3000)
+        setTimeout(() => {
+          commit(SET_COUNT, { count: state.count + 1 })
+          resolve(state.count)
+        }, 3000)
+      })
+    }
   },
   modules: {
   }
 })
+// let obj = await this.$store.dispatch(GET_xxx, {...})
+// if(obj.err) errHandler(obj.err.type)
+// else completeHandler(obj.data)

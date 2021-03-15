@@ -15,13 +15,24 @@
   <div><b>evenNumbers:</b> <br>{{ evenNumbers }} </div>
 <hr>
 <h2>Mutations</h2>
+  <small>mutations處理函數必須是同步的，非同步可用actions</small>
   <div>count: {{ count }}
     <button @click='increment'>+</button>
+    <button @click='setCount'>SET_COUNT(10)</button>
   </div>
+<hr>
+<h2>Actions</h2>
+    <button @click='actCount'>ACT_COUNT ++</button>
+    <button @click='asyncCount'>ASYNC_COUNT ++</button>
+<hr>
+<h2>Module</h2>
+  <div>$store.state.a.count: {{ $store.state.a.count }}</div>
+<hr>
 </template>
 
 <script>
 import { mapState, mapGetters } from 'vuex'
+import { SET_COUNT } from '@/store/mutation-types'
 
 export default {
   data () {
@@ -54,7 +65,43 @@ export default {
   methods: {
     increment () {
       this.$store.commit('INCREMENT')
+    },
+    setCount () {
+      this.$store.commit(SET_COUNT, { count: 10 })
+    },
+    actCount () {
+      this.$store.dispatch('ACT_COUNT')
+    },
+    // asyncCount ({ commit }) {
+    //   setTimeout(() => {
+    //     this.$store.commit('INCREMENT')
+    //   }, 1000)
+    // }
+    asyncCount () {
+      this.$store.dispatch('INCREMENT_ASYNC').then((count) => {
+        console.log(count)
+      })
     }
+    // actionA ({ commit }) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             this.$store.commit('someMutation')
+    //             resolve()
+    //         }, 1000)
+    //     })
+    // },
+    // actionB ({ dispatch, commit }) {
+    //     return dispatch('actionA').then(() => {
+    //         this.$store.commit('someOtherMutation')
+    //     })
+    // },
+    // async actionC ({ commit }) {
+    //     this.$store.commit('gotData', await getData())
+    // },
+    // async actionD ({ dispatch, commit} ) {
+    //     await dispatch('actionC')
+    //     this.$store.commit('gotOtherData', await getOtherData())
+    // }
   }
 }
 </script>
