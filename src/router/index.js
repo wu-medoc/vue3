@@ -23,6 +23,11 @@ const routes = [
     component: () => import('@/LifeCycle.vue')
   },
   {
+    path: '/vue3/Module',
+    name: 'VuexModule',
+    component: () => import('@/VuexModule.vue')
+  },
+  {
     path: '/vue3/Vuex',
     name: 'VuexDemo',
     component: () => import('@/VuexDemo.vue')

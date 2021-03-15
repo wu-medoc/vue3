@@ -25,9 +25,6 @@
     <button @click='actCount'>ACT_COUNT ++</button>
     <button @click='asyncCount'>ASYNC_COUNT ++</button>
 <hr>
-<h2>Module</h2>
-  <div>$store.state.a.count: {{ $store.state.a.count }}</div>
-<hr>
 </template>
 
 <script>

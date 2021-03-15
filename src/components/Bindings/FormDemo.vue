@@ -63,7 +63,7 @@
 
         <strong>動態選項呈現v-for</strong>
         <select v-model="selected1">
-            <option v-for="option in options" :value="option.value" :key="option">
+            <option v-for="option in options" :value="option.value" :key="option.text">
             {{ option.text }}
             </option>
         </select>

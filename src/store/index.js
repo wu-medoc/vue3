@@ -1,7 +1,53 @@
 import { createStore } from 'vuex'
 import { SET_COUNT } from './mutation-types'
 
+const moduleA = {
+  namespaced: true,
+  state: {
+    count: 1
+  },
+  mutations: {
+    ADD_COUNT (state) {
+      state.count += 2
+    }
+  },
+  getters: {
+    plusCount (state, getters, rootState, rootGetters) {
+      return state + 1
+    }
+  },
+  actions: {
+    ACTIONS_COUNT (context) {
+      console.log(context)
+      console.log(context.getters.plusCount)
+      return context.state + 1
+    }
+  }
+}
+
+const moduleB = {
+  state: {
+    count: 2
+  },
+  mutations: {
+    ADD_COUNT (state) {
+      state.count += 3
+    }
+  },
+  getters: {
+  },
+  actions: {
+    ACTIONS_COUNT_B (state) {
+      return state + 1
+    }
+  }
+}
+
 export default createStore({
+  modules: {
+    a: moduleA,
+    b: moduleB
+  },
   state: {
     lightbox: 0,
     count: 3,
@@ -52,6 +98,9 @@ export default createStore({
     // []定義參數
     [SET_COUNT] (state, payload) {
       state.count = payload.count
+    },
+    ADD_COUNT (state) {
+      state.count++
     }
   },
   actions: {
@@ -83,8 +132,6 @@ export default createStore({
         }, 3000)
       })
     }
-  },
-  modules: {
   }
 })
 // let obj = await this.$store.dispatch(GET_xxx, {...})

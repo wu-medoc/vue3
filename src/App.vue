@@ -31,7 +31,8 @@ export default {
         { names: 'Home', router: '/vue3/' },
         { names: 'LifeCycle', router: '/vue3/LifeCycle' },
         { names: 'ElementPlus', router: '/vue3/Plus' },
-        { names: 'Vuex', router: '/vue3/Vuex' },
+        { names: 'VuexModule', router: '/vue3/Module' },
+        { names: 'VuexVuex', router: '/vue3/Vuex' },
         { names: 'Box', router: '/vue3/Box' },
         { names: 'Nested', router: '/vue3/Nested/NestedContent' }
       ],
