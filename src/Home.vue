@@ -1,9 +1,9 @@
 <template>
+<div>
   <!-- <HelloWorld msg="Vue3 Demo"/> -->
   <div>
       <div class="nav-bar flexCenter">Components Basics</div>
       <Basic />
-      <Blog />
   </div>
   <div>
       <div class="nav-bar flexCenter">Template-Syntax</div>
@@ -44,6 +44,7 @@
   <div>
       <div class="nav-bar flexCenter">Components In-Depth</div>
   </div>
+</div>
 </template>
 
 <script>
@@ -58,7 +59,6 @@ import InlineStyles from './components/Bindings/InlineStyles'
 import FormInput from './components/Bindings/FormInput'
 import FormDemo from './components/Bindings/FormDemo'
 import Basic from './components/CompDemo/Basic'
-import Blog from './components/CompDemo/Blog'
 import ConditionalRendering from './components/Rendering/ConditionalRendering'
 import ListRendering from './components/Rendering/ListRendering'
 import FilterRendering from './components/Rendering/FilterRendering'
@@ -78,7 +78,6 @@ export default {
     FormInput,
     FormDemo,
     Basic,
-    Blog,
     ConditionalRendering,
     ListRendering,
     FilterRendering,

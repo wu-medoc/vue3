@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="flexCenter">
     <img alt="Vue logo" class="logo" src="../../assets/logo.png"><a href="/"><h1>{{ msg }}</h1></a>
   </div>
@@ -49,6 +50,7 @@
         </div>
       </div>
   </div>
+</div>
 </template>
 
 <script>

@@ -1,4 +1,5 @@
 <template>
+<div>
 <h2>Store & mapState</h2>
   <div>count: {{ count }}</div>
   <div>$store.state.count: {{ $store.state.count }}</div>
@@ -25,6 +26,7 @@
     <button @click='actCount'>ACT_COUNT ++</button>
     <button @click='asyncCount'>ASYNC_COUNT ++</button>
 <hr>
+</div>
 </template>
 
 <script>

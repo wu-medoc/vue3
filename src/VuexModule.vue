@@ -1,5 +1,6 @@
 <template>
-<h2>Module</h2>
+<div>
+  <h2>Module</h2>
   <div>$store.state.count: {{ $store.state.count }}</div>
   <div>$store.state.a.count(+2): {{ $store.state.a.count }}</div>
   <div>$store.state.b.count(+3): {{ $store.state.b.count }}</div>
@@ -10,8 +11,7 @@
   <small>A module若要獲取B module資料裡，需透過root</small><br><br>
   <button @click="toggleHandler">toggle registerModule c</button><br>
   <div v-if="hasModule">$store.state.c.count(+4): {{ $store.state.c.count }}</div>
-<hr>
-
+</div>
 </template>
 
 <script>

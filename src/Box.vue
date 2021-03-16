@@ -1,4 +1,5 @@
 <template>
+<div>
     <div id="nav">
       <router-link to="/vue3/Box/pic">PicList</router-link> |
       <router-link to="/vue3/Box/pic/1">Pic 1</router-link> |
@@ -12,6 +13,7 @@
       </div>
       <button @click="closeHandler">X</button>
     </div>
+</div>
 </template>
 
 <script>

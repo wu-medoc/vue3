@@ -1,4 +1,5 @@
 <template>
+<div>
     <ul class="square">
       <strong>除beforeCreate和created之外，我們可以在設置方法中訪問9個舊的生命週期掛鉤</strong>
       <li>onBeforeMount –在安裝開始之前調用</li>
@@ -39,6 +40,7 @@
       <li>在 Vue3.x 中，爲了相容 Vue2.x 的語法，所有舊的生命週期函式得到保留（除了 beforeDestroy 和 destroyed ）。當生命週期混合使用時： Vue3.x 的生命週期相對優先於 Vue2.x 的執行 ，比如： onMounted 比 mounted 先執行。 </li>
       <li>通過對比可以得出： 當你的主版本是哪個，當生命週期混用時，誰的回撥鉤子就會相對優先執行。</li>
     </ul>
+</div>
 </template>
 
 <script>

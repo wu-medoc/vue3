@@ -1,4 +1,5 @@
 <template>
+<div>
     <el-menu
       :default-active='$route.name'
       class='el-menu-demo'
@@ -15,6 +16,7 @@
       ><router-link to='/about'>About</router-link></el-menu-item> -->
     </el-menu>
     <router-view></router-view>
+</div>
 </template>
 
 <script>

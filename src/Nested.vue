@@ -1,4 +1,5 @@
 <template>
+<div>
   <button><router-link to="/vue3/Nested/NestedContent">router-link to="/vue3/Nested/NestedContent"</router-link></button><br>
   <button><router-link to="/vue3/Nested/Child/123">router-link to="/vue3/Nested/Child/123"</router-link></button><br>
   <button><router-link :to="{name:'ChildRouter',params:{uid:123}}">router-link :to="{name:'ChildRouter',params:{uid:123}}"</router-link></button><br>
@@ -58,6 +59,7 @@
     切換頁面時可以定義捲軸所在位置
   </small></p>
   <br>
+</div>
 </template>
 
 <script>
